@@ -2,16 +2,18 @@ let pscore = 0
 let cscore = 0
 
 //setting playerm pick
-let Buttons = document.querySelectorAll('button')
+let Buttons = document.querySelectorAll('img')
 
 Buttons.forEach((button) =>{
     button.addEventListener('click', (event)=> {
 
         let player = event.target.id
-        console.log(player)
+        
 
         let computer = computerplay()
         Game(player, computer)
+        
+        return;
     })
     
 })
@@ -30,9 +32,9 @@ function computerplay (){
         return  "scissors"
     }
 
- 
+ return;
 }
-console.log(computerplay())
+
   function getRandomInt(max) {
 
     return Math.floor(Math.random() * max);
