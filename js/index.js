@@ -1,7 +1,7 @@
 let pscore = 0
 let cscore = 0
 
-//setting playerm pick
+//Setting Player Selection
 let Buttons = document.querySelectorAll('img')
 
 Buttons.forEach((button) =>{
@@ -18,15 +18,15 @@ Buttons.forEach((button) =>{
     
 })
 
-//Setting the computer selection
+//Setting  computer random selection selection
 function computerplay (){
 
     let random =  getRandomInt(3)
 
-    if (random == 0){
+    if (random === 0){
         return "rock"
     }
-    else if (random == 1){
+    else if (random === 1){
         return "paper"
     }else{
         return  "scissors"
@@ -39,8 +39,9 @@ function computerplay (){
 
     return Math.floor(Math.random() * max);
   }
-  
-  //setting Game
+   
+  // Playing Round
+
   function Game(player, computer){
     const message = document.querySelector('.result')
 
@@ -76,7 +77,8 @@ function computerplay (){
   }
   
 
-//setting score
+//Setting both player and computer score 
+
 function score() {
     let playerScorer = document.querySelector('#playerscore')
     let computerScorer = document.querySelector('#computerscore')
