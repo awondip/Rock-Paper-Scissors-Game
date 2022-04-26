@@ -5,7 +5,7 @@
     background-color: rgb(102, 99, 99);
 }
 
-.section {
+.selection-wrapper {
     width: 100%;
     height: auto;
     display: flex;
@@ -70,7 +70,7 @@ h1{
     transform: translate3d(0px, 6px, 0px);
 
 }
-#rock{
+#rock, #paper, #scissors{
     margin: 10px;
     padding: 20px;
     border-radius: 10px;
@@ -79,38 +79,6 @@ h1{
     color: wheat;
     background-color: black;
     cursor: pointer;
-
-}
-#paper{
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    width: 130px;
-    height: 105px;
-    color: wheat;
-    background-color: black;
-    cursor: pointer;
-
-}
-#scissors{
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    width: 130px;
-    height: 105px;
-    color: wheat;
-    background-color: black;
-    cursor: pointer;
-
-}
-.img {
-    width: 80px;
-    height: 80px;
-    object-fit: fill;
-    padding: 4px;
-    border-image: 40px;
-    margin-top: 10px;
-    
 
 }
 
