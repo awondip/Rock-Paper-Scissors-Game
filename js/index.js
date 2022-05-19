@@ -1,44 +1,53 @@
 let pscore = 0
 let cscore = 0
 
-//Setting Player Selection
-let Buttons = document.querySelectorAll('img')
-
-Buttons.forEach((button) =>{
-    button.addEventListener('click', (event)=> {
-
-        let player = event.target.id
-        
-
-        let computer = computerplay()
-        Game(player, computer)
-        
-        return;
-    })
-    
-})
 
 //Setting  computer random selection selection
 function computerplay (){
 
-    let random =  getRandomInt(3)
+  let random =  getRandomInt(3)
 
-    if (random === 0){
-        return "rock"
-    }
-    else if (random === 1){
-        return "paper"
-    }else{
-        return  "scissors"
-    }
-
- return;
+  if (random === 0){
+      return "rock"
+  }
+  else if (random === 1){
+      return "paper"
+  }else{
+      return  "scissors"
+  }
+ return
 }
 
-  function getRandomInt(max) {
+function getRandomInt(max) {
 
-    return Math.floor(Math.random() * max);
-  }
+  return Math.floor(Math.random() * max);
+}
+
+
+//Setting Player Selection
+let Buttons = document.querySelectorAll('img')
+Buttons.forEach((button) =>{
+    button.addEventListener('click', (event)=> {
+
+        let player = event.target.id
+        console.log(player)
+        
+
+        let computer = computerplay()
+        Game(player, computer)
+        displayingSelect(player, computer)
+        return;
+    })
+  
+})
+
+
+
+
+
+
+
+
    
   // Playing Round
 
@@ -75,6 +84,39 @@ function computerplay (){
       score()
       
   }
+
+  //Displaying player and computer selection
+
+  function displayingSelect(player, computer){
+    let playerSelect = document.querySelector(".player-choice-display")
+    let computerSelect = document.querySelector(".computer-choice-display")
+
+    switch (player) {
+      case 'rock':
+        playerSelect.textContent = '✊'
+        break
+      case 'paper':
+        playerSelect.textContent = '✋'
+        break 
+      case 'scissors':
+        playerSelect.textContent = '✌'
+        break
+    }
+
+    switch (computer) {
+      case 'rock':
+        computerSelect.textContent = '✊'
+        break
+      case 'paper':
+        computerSelect.textContent = '✋'
+        break
+      case 'scissors':
+        computerSelect.textContent = '✌'
+        break
+    }
+
+
+  }
   
 
 //Setting both player and computer score 
@@ -96,6 +138,7 @@ function  choosingwinner(){
         message.textContent = 'Game Over. You Win!';
         pscore = 0
         cscore = 0
+
       } else if (pscore < 5 && cscore >= 5) {
         message.textContent = 'Game Over. You Lose!';
         pscore = 0
